@@ -6,8 +6,9 @@
   },
   "scripts": {
     "format": "prettier --write src/*.ts",
-    "protobuf:generate": "pbjs -t static-module -w commonjs -o protocol.js protocol.proto && pbts -o protocol.d.ts protocol.js",
-    "test": "jest"
+    "gen:protobuf": "pbjs -t static-module -w commonjs -o src/protocol.js src/protocol.proto && pbts -o src/protocol.d.ts src/protocol.js",
+    "test": "jest",
+    "postinstall": "npm run gen:protobuf"
   },
   "devDependencies": {
     "@types/jest": "^26.0.20",
