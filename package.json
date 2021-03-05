@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "eventemitter3": "^4.0.7",
+    "loglevel": "^1.7.1",
+    "protobufjs": "^6.10.2"
+  },
+  "scripts": {
+    "format": "prettier --write src/*.ts",
+    "protobuf:generate": "pbjs -t static-module -w commonjs -o protocol.js protocol.proto && pbts -o protocol.d.ts protocol.js",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.31",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.5.3",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.2"
+  }
+}
