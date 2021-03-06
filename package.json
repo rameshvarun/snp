@@ -6,9 +6,9 @@
   },
   "scripts": {
     "format": "prettier --write src/*.ts",
-    "gen:protobuf": "pbjs -t static-module -w commonjs -o src/protocol.js src/protocol.proto && pbts -o src/protocol.d.ts src/protocol.js",
+    "build:protobuf": "pbjs -t static-module -w commonjs -o src/protocol.js src/protocol.proto && pbts -o src/protocol.d.ts src/protocol.js",
     "test": "jest",
-    "postinstall": "npm run gen:protobuf"
+    "postinstall": "npm run build:protobuf"
   },
   "devDependencies": {
     "@types/jest": "^26.0.20",
